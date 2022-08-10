@@ -1,0 +1,64 @@
+\documentclass[a4paper, 11pt]{article}
+
+
+\usepackage[margin=1in]{geometry} % full-width
+
+% AMS Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% Unicode
+\usepackage[utf8]{inputenc} 
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode,
+    colorlinks,
+    breaklinks,
+    urlcolor=cyan, 
+    linkcolor=black, 
+    citecolor=black,
+    pdfauthor={Some Name},
+    pdftitle={Latex Tempate},
+    pdfsubject={Latex Tempate},
+    pdfkeywords={latex, example, template},
+    pdfproducer={LaTeX},
+    pdfcreator={pdflatex}
+}
+
+
+%% Set up path to figures.
+\usepackage{graphicx} %Loading the package
+\graphicspath{{document/img/}} %Setting the graphicspath
+
+
+\usepackage{color}
+\usepackage{wrapfig}
+
+\usepackage{braket}
+
+\usepackage{lipsum}
+
+%% Set up bibliography
+\usepackage[backend=biber, style=numeric, sorting=ynt]{biblatex}  %backend=biber is 'better'  
+\addbibresource{main.bib}
+
+%% make sure tex files can be found
+\makeatletter
+\def\input@path{{../tex/}}
+\makeatother
+
+
+
+\begin{document}
+    \begin{abstract}
+    \lipsum[1-1]
+    \end{abstract}
+    \input{intro.tex} 
+    \input{matter.tex}
+
+  \newpage
+    \printbibliography
+    
+\end{document}
